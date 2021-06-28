@@ -1,0 +1,95 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="css/profil-style.css">
+{% endblock %}
+
+{% block title %}Quizit | Profil{% endblock %}
+
+{% block body %}
+<main class="content">
+      <section class="container">
+        <div class="dashboard">
+          <div class="user">
+           <br>
+             <img src="{{  asset('images/Profil.png')}}"/>
+            <h3>Camille Honette</h3>
+            <p>Profil Member</p>
+          </div>
+          <div class="links">
+                <form action={{ path('app_profile_edit')}}> 
+                    <button class="link">
+                        <img src="{{  asset('images/edit-icon.png')}}" alt="" />
+                        <h2>Edit</h2>
+                    </button>
+                </form>
+                <form action={{ path('app_profile')}}> 
+                    <button class="link">
+                    <img src="{{  asset('images/quiz-icon.png')}}" alt="" />
+                    <h2>Quiz</h2>
+                    </button>
+                </form>
+                <form action={{ path('app_profile')}}> 
+                    <button class="link">
+                        <img src="{{  asset('images/game-icon.png')}}" alt="" />
+                        <h2>Scores</h2>
+                    </button>
+                </form>
+          </div>
+
+          <form action={{ path('quiz_quiz')}}> 
+          <div class="pro">
+           <button>
+            <h2>Back and go game.</h2>
+            <img src="{{  asset('images/game.png')}}" alt="" />
+            </button>
+          </div>
+        </form>
+          
+        </div>
+       
+        <div class="games">
+
+         <div class="status">
+            <h1>Active Games</h1>
+            <input type="text" disabled />
+          </div>
+          <h2>Best score</h2>
+          <div class="cards">
+            <div class="card">
+              <img src="https://images.unsplash.com/photo-1610987630265-35804332a182?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80" alt="" />
+              <div class="card-info">
+                <h2>Assassin's Creed Valhalla</h2>
+                <p>You can progress </p>
+                <div class="progress"></div>
+              </div>
+              <h2 class="percentage">30%</h2>
+            </div>
+            <div class="card">
+              <img src="https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="" />
+              <div class="card-info">
+                <h2>Programmation quiz, your score :</h2>
+                <p>Amazing you are realy smart</p>
+                <div class="progress"></div>
+              </div>
+              <h2 class="percentage">75%</h2>
+            </div>
+            <div class="card">
+              <img src="https://images.unsplash.com/photo-1505925456693-124134d66749?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80" alt="" />
+              <div class="card-info">
+                <h2>Marvel's Spider-Man: Miles Morales</h2>
+                <p>Wow continue </p>
+                <div class="progress"></div>
+              </div>
+              <h2 class="percentage">60%</h2>
+            </div>
+          </div> 
+
+
+        </div>
+      </section>
+    </main>
+    {# <div class="circle1"></div>
+    <div class="circle2"></div> #}
+
+{% endblock %}

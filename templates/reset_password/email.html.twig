@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Password Reset Email Sent{% endblock %}
+
+{% block body %}
+    <style>
+    @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;800&display=swap");
+        .wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 ;font-family: 'Nunito', sans-serif; }
+    </style>
+
+<div class="wrapper">
+
+    <h1 style="color:lightblue" >Hi!</h1>
+
+    <p>To reset your password, please visit the following link</p>
+
+    <a style="color:lightblue" href="{{ url('app_reset_password', {token: resetToken.token}) }}">{{ url('app_reset_password', {token: resetToken.token}) }}</a>
+
+    <p>This link will expire in {{ resetToken.expirationMessageKey|trans(resetToken.expirationMessageData, 'ResetPasswordBundle') }}.</p>
+
+    <p>Cheers!</p>
+</div>
+{% endblock %}

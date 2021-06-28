@@ -1,0 +1,88 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="css/profil-style.css">
+{% endblock %}
+
+{% block title %}Quizit | Edit{% endblock %}
+
+{% block body %}
+<main class="content">
+      <section class="container">
+        <div class="dashboard">
+          <div class="user">
+           <br>
+             <img src="{{  asset('images/Profil.png')}}"/>
+             <h3>Camille Honette</h3>
+            <p>Profil Member</p>
+          </div>
+          <div class="links">
+                <form action={{ path('app_profile_edit')}}> 
+                    <button class="link">
+                        <img src="{{  asset('images/edit-icon.png')}}" alt="" />
+                        <h2>Edit</h2>
+                    </button>
+                </form>
+                <form action={{ path('app_profile')}}> 
+                    <button class="link">
+                    <img src="{{  asset('images/quiz-icon.png')}}" alt="" />
+                    <h2>Quiz</h2>
+                    </button>
+                </form>
+                <form action={{ path('app_profile')}}> 
+                    <button class="link">
+                        <img src="{{  asset('images/game-icon.png')}}" alt="" />
+                        <h2>Scores</h2>
+                    </button>
+                </form>
+          </div>
+
+         <form action={{ path('quiz_quiz')}}> 
+          <div class="pro">
+           <button>
+            <h2>Back and go game.</h2>
+            <img src="{{  asset('images/game.png')}}" alt="" />
+            </button>
+          </div>
+        </form>
+          
+        </div>
+       
+       <div class="games">
+
+         <div class="status">
+            <h1>Active Games</h1>
+            <input type="text" disabled />
+          </div>
+                <h2>Your informations </h2>
+          <div class="cards">
+            <div class="card-edit">
+              <form action="" method="post">
+              <div class="card-info">
+                <img src="https://i.pravatar.cc/150?img=62"/>
+                <h3>Camille Honette</h3>
+                <h2>You can edit your profil</h2>
+                <p>Name</p>
+                <input class="status input" type="text" name="name" />
+                  <p>Email</p>
+                <input class="status input" type="text" name="email"/>
+                  <p>Password</p>
+                <input class="input" type="password" name="password"/>
+                 
+                    <button class="submit" type="submit" >Edit </button>
+                 </form>
+              </div>
+             
+
+            </div>
+           
+          </div> 
+
+
+        </div>
+      </section>
+    </main>
+    {# <div class="circle1"></div>
+    <div class="circle2"></div> #}
+
+{% endblock %}

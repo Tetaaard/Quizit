@@ -1,0 +1,110 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Quizit | Home{% endblock %}
+
+{% block stylesheets %}
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/1.17.2/simplelightbox.min.css'>
+    <link rel="stylesheet" href="css/home-style.css">
+{% endblock %}
+
+{% block body %}
+
+ {% for flashSuccess in app.flashes('success') %}
+        <div class="alert alert-success" role="alert">{{ flashSuccess }}</div>
+ {% endfor %}
+
+<style>
+  {# @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;800&display=swap"); #}
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 ;font-family: 'Nunito', sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+      .section-b {
+    position: relative;
+    background: url("{{asset('images/Home-Banner.png')}}") no-repeat bottom center/cover;
+    height: 600px;
+  }
+</style>
+<div class="body">
+{# <div class="example-wrapper">
+    <h1>Welcome {% if app.user %}, {{ app.user.username }}{% endif %}! </h1>
+
+    This friendly message is coming from:
+    <ul>
+        <li>You can log you at  <code><a href="{{ '/login' }}">Login</a></code></li>
+        <li>You can sign you   <code><a href="{{ '/register' }}">Register</a></code></li>
+        <li>You can see home at  <code><a href="{{ '/home' }}">Home</a></code></li>
+        <li>You can see about us at  <code><a href="{{ '/about' }}">About</a></code></li>
+        <li>You can see quiz at  <code><a href="{{ '/quiz' }}">Quiz</a></code></li>
+    </ul>
+</div> #}
+<!-- Showcase -->
+    <section class="section-a">
+      <div class="container">
+        <div>
+          <h1>Learn more, having fun </h1>
+          <p>
+            Lorem ipsum dolor sit amet adipisicing elit ade.   
+           Rerum libero ipsum  omnis mollitia melocul.
+          </p>
+          <a href="{{ '/quiz' }}" class="play">Play Quiz</a>
+          <a href="{{ '/register' }}" class="btn ">Join team</a>
+        </div>
+        <img src="{{  asset('images/Home.png')}}" alt="" />
+      </div>
+      <br>
+      <br>
+    </section>
+
+    <!-- Large Text -->
+    <section id="about" class="section-b">
+      <div class="overlay">
+        <div class="section-b-inner py-5">
+          <h2 class="text-5 mt-1">Join a game of Quizit </h2>
+          <p class="mt-1">
+            Quizit ! is a free game-based learning platform that makes it fun to learn 
+            – any subject, in any language, on any device, for all ages!
+  
+          </p>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Gallery -->
+    <section class="section-d">
+      <div class="gallery">
+        <a href="{{ '/quiz' }}" class="big" >
+       
+         <div class="text">
+             <h1 class="title"> Testez vos connaisances </h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Depudiandae laboriosam quia, error tempore porro ducimus 
+            laborum nostrum iure. Dicta le pudiandae labor iosam quia, error tempore porro ducimus voluptate
+            la nostrum iure. Quo repudiandae rerum libero ipsum asperiore</p>
+            <br>
+            <button class="explore play">Explorer </button>
+          </div></a>
+         <a href="{{ '/quiz' }}" class="big image1"
+          ><img src="{{  asset('images/Categorie/incas.png')}}" alt=""
+        /></a>
+        <a href="{{ '/quiz' }}" class="big image2"
+          ><img src="{{  asset('images/Categorie/world.png')}}" alt=""
+        /></a>
+        <a href="{{ '/quiz' }}" class="big"
+          ><img src="{{  asset('images/Categorie/touriste.png')}}" alt=""
+        /></a>
+        <a href="{{ '/quiz' }}" class="big">
+          <img src="{{  asset('images/Categorie/pirate.png')}}" alt=""
+        /></a>
+        <a href="{{ '/quiz' }}" class="big"
+          ><img src="{{  asset('images/Categorie/plantes.png')}}" alt=""
+        /></a>
+         <a href="{{ '/quiz' }}" class="big"
+          ><img src="{{  asset('images/Categorie/boudhisme.png')}}" alt=""
+        /></a>
+      </div>
+    </section>
+</body>
+    <!-- Footer -->
+    <footer class="section-footer py-4 bg-primary">
+
+    </footer>
+{% endblock %}

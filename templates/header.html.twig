@@ -1,0 +1,40 @@
+{% block stylesheets %}
+    <link rel="stylesheet" href="css/nav-style.css">
+{% endblock %}
+
+{% block header %}
+<div class="nav">
+  <input type="checkbox" id="nav-check">
+  <div class="nav-header">
+    <div class="nav-title">
+    <a href="/">
+      Quizit
+    </a>
+    </div>
+  </div>
+  <div class="nav-btn">
+    <label for="nav-check">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+  </div>
+  <div class="nav-links navigation-links">
+       <a href="{{ '/quiz' }}">Quiz</a>
+      {% if app.user %}
+        <a href="{{ path('app_create') }}">Create Quiz</a>
+        <a href="{{ '/profile' }}">Profile</a>
+      {% endif %}
+      {# <a href="{{ '/about' }}">About</a> #}
+     {% if not app.user %}
+      <a href="{{ '/register' }}">Sign In</a>
+      <a href="{{ '/login' }}">Sign Up</a>
+     {% else %}
+      <a href="{{ '/logout' }}">Log out</a>
+     {% endif %}
+    
+  </div>
+</div>
+
+{% endblock %}
+

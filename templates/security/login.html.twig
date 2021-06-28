@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="css/style.css">
+{% endblock %}
+
+{% block title %}Log in!{% endblock %}
+
+{% block body %}
+<div class="body">
+    <div class="container">
+        <div class="form-container sign-in-container">
+            <form method="post" class="form">
+                {% if error %}
+                    <div class="alert alert-danger" style="color:#ff4b2b">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                {% endif %}
+
+                {% if app.user %}
+                    <div class="mb-3" style="color:green">
+                        <span>You are logged in as {{ app.user.username }}, </span><a href="{{ path('app_logout') }}">Logout</a>
+                    </div>
+                {% endif %}
+
+            <h1>Sign Up</h1>
+            <span>NIce to see you again !</span>
+                <input type="email" placeholder="Email" value="{{ last_username }}"  name="email" required autofocus  />
+                <input type="password" placeholder="Password" name="password"  required />
+                <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+            <a href="{{ path('app_forgot_password_request')}}">Forgot your password?</a>
+                <label>
+                <input type="checkbox" name="_remember_me" checked /><a > &nbsp; &nbsp; &nbsp;Remember me</a>
+                </label>
+            <button type="submit">Sign up</button>
+            </form>
+        </div>
+
+        <div class="overlay-container">
+            <div class="overlay">
+            <div class="overlay-panel overlay-right">
+                <h1>Welcome Back!</h1>
+                <p>Please login with your personal info</p>
+                <form action={{ path('app_register')}}>
+                <button class="ghost">Sign In</button>
+                </form>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

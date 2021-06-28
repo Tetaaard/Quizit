@@ -1,0 +1,48 @@
+{# @var ea \EasyCorp\Bundle\EasyAdminBundle\Context\AdminContext #}
+{% extends '@EasyAdmin/page/content.html.twig' %}
+
+{% block page_title 'Your Admin Dashboard' %}
+
+{% block page_content %}
+<style>
+.list-group-item.active {
+ z-index:2;
+ color:#fff;
+ background-color:#d19b61;
+ border-color:#d19661;
+}
+
+</style>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-6 alert-warning">
+        <span class="display-3"> {{ countAllUser['value'] }} Utilisateur </span>
+        </div>
+        <div class="col-6 alert-secondary">
+            <span class="display-3"> {{ countAllCategorie['value'] }} Quiz</span>
+        </div>
+    </div>
+</div>
+<p class="h3 ml-5"> Liste des Utilisateurs </p>
+<div class="row mt-3">
+  <div class="col-4">
+    <div class="list-group" id="list-tab" role="tablist">
+    {% for userInfo in userInfos %}
+      <a class="list-group-item list-group-item-action" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">{{ userInfo.email }}</a>
+      {% endfor %}
+    </div>
+  </div>
+  <div class="col-8">
+    <div class="tab-content" id="nav-tabContent">
+    {% for userInfo in userInfos %}
+      <div class="tab-pane fade show " id="list-home" role="tabpanel" aria-labelledby="list-home-list">{{ userInfo.password }}</div>
+      {% endfor %}
+    </div>
+  </div>
+ </div>
+
+
+
+
+{% endblock %}
+

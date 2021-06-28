@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;800&display=swap");
+    .wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 ;font-family: 'Nunito', sans-serif; }
+</style>
+
+<div class="wrapper">
+<h1 style="color:lightblue">Hi! Please confirm your email!</h1>
+
+<p>
+    Please confirm your email address by clicking the following link: <br><br>
+    <a style="color:lightblue" href="{{ signedUrl|raw }}">Confirm my Email</a>.
+    This link will expire in {{ expiresAtMessageKey|trans(expiresAtMessageData, 'VerifyEmailBundle') }}.
+</p>
+
+<p>
+    Cheers!
+</p>
+</div>
+{% endblock %}

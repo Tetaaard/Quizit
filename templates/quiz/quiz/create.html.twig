@@ -1,0 +1,214 @@
+{% extends 'base.html.twig' %} 
+
+
+{# {% form_theme form 'bootstrap_4_layout.html.twig' %} #}
+
+{% block stylesheets %}
+   <link rel="stylesheet" href="css/create-quiz-style.css">
+{% endblock %}
+{% block body %}
+<style>
+
+</style>
+<div class="body">
+<div class="container-fluid justify-content-md-center col-8 ">
+     <div class="box-content">
+        <h1> Creation d'un quiz </h1>
+        <div class="box">
+            {{ form_start(form) }} 
+            {{ form_row(form.Categorie.name) }}
+            {{ form_row(form.Categorie.image) }}
+     </div> 
+        <div class="box">
+            {{ form_label(form.question1.question, 'Question 1') }}
+            {{ form_row(form.question1.question) }}
+
+            {{ form_row(form.question1.reponse1) }}
+            <div class="d-flex col-12">
+                <div class="form-group has-danger col-6 m-1">
+                {{ form_row(form.question1.badreponse1) }}
+                </div>
+                <div class="form-group has-danger col-6 m-1">
+                {{ form_row(form.question1.badreponse2) }}
+                </div>
+                </div>
+        </div>
+        <div class="box">
+            {{ form_label(form.question2.question, 'Question 2') }}
+            {{ form_row(form.question2.question) }}
+
+            {{ form_row(form.question2.reponse1) }}
+            <div class="d-flex col-12">
+                <div class="form-group has-danger col-6 m-1">
+                {{ form_row(form.question2.badreponse1) }}
+                </div>
+                <div class="form-group has-danger col-6 m-1">
+                {{ form_row(form.question2.badreponse2) }}
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            {{ form_label(form.question3.question, 'Question 3') }}
+            {{ form_row(form.question3.question) }}
+
+            {{ form_row(form.question3.reponse1) }}
+            <div class="d-flex col-12">
+                <div class="form-group has-danger col-6 m-1">
+                {{ form_row(form.question3.badreponse1) }}
+                </div>
+                <div class="form-group has-danger col-6 m-1">
+                {{ form_row(form.question3.badreponse2) }}
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            {{ form_label(form.question4.question, 'Question 4') }}
+            {{ form_row(form.question4.question) }}
+
+            {{ form_row(form.question4.reponse1) }}
+            <div class="d-flex col-12">
+                <div class="form-group has-danger col-6 m-1">
+                {{ form_row(form.question4.badreponse1) }}
+                </div>
+                <div class="form-group has-danger col-6 m-1">
+                {{ form_row(form.question4.badreponse2) }}
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            {{ form_label(form.question5.question, 'Question 5') }}
+            {{ form_row(form.question5.question) }}
+
+            {{ form_row(form.question5.reponse1) }}
+            <div class="d-flex col-12">
+                <div class="form-group has-danger col-6 m-1">
+                {{ form_row(form.question5.badreponse1) }}
+                </div>
+                <div class="form-group has-danger col-6 m-1">
+                {{ form_row(form.question5.badreponse2) }}
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            {{ form_label(form.question6.question, 'Question 6') }}
+            {{ form_row(form.question6.question) }}
+
+            {{ form_row(form.question6.reponse1) }}
+            <div class="d-flex col-12">
+                <div class="form-group has-danger col-6 m-1">
+                {{ form_row(form.question6.badreponse1) }}
+                </div>
+                <div class="form-group has-danger col-6 m-1">
+                {{ form_row(form.question6.badreponse2) }}
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            {{ form_label(form.question7.question, 'Question 7') }}
+            {{ form_row(form.question7.question) }}
+
+            {{ form_row(form.question7.reponse1) }}
+            <div class="d-flex col-12">
+                <div class="form-group has-danger col-6 m-1">
+                {{ form_row(form.question7.badreponse1) }}
+                </div>
+                <div class="form-group has-danger col-6 m-1">
+                {{ form_row(form.question7.badreponse2) }}
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            {{ form_label(form.question8.question, 'Question 8') }}
+            {{ form_row(form.question8.question) }}
+
+            {{ form_row(form.question8.reponse1) }}
+            <div class="d-flex col-12">
+                <div class="form-group has-danger col-6 m-1">
+                {{ form_row(form.question8.badreponse1) }}
+                </div>
+                <div class="form-group has-danger col-6 m-1">
+                {{ form_row(form.question8.badreponse2) }}
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            {{ form_label(form.question9.question, 'Question 9') }}
+            {{ form_row(form.question9.question) }}
+
+            {{ form_row(form.question9.reponse1) }}
+            <div class="d-flex col-12">
+                <div class="form-group has-danger col-6 m-1">
+                {{ form_row(form.question9.badreponse1) }}
+                </div>
+                <div class="form-group has-danger col-6 m-1">
+                {{ form_row(form.question9.badreponse2) }}
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            {{ form_label(form.question10.question, 'Question 10') }}
+            {{ form_row(form.question10.question) }}
+
+            {{ form_row(form.question10.reponse1) }}
+            <div class="d-flex col-12">
+                <div class="form-group has-danger col-6 m-1">
+                {{ form_row(form.question10.badreponse1) }}
+                </div>
+                <div class="form-group has-danger col-6 m-1">
+                {{ form_row(form.question10.badreponse2) }}
+                </div>
+            </div>
+             <button type="submit">Créer </button>
+        </div>
+       
+    </div>
+{# <ul>
+{% for reponseField in form.content %}
+    <li>
+    {{ form_row(form.content) }}
+    </li>
+{% endfor %}
+</ul> #}
+{{ form_end(form) }} 
+
+    {# <form>
+        <fieldset>
+            <legend>Your Quiz</legend>
+            <div class="form-group">
+                <label >Titre du quiz</label>
+                <input type="text" class="form-control" placeholder="Choose title for your quiz">
+            </div>
+            <div class="form-group">
+                <label >Image de votre quiz </label>
+                <input class="form-control" type="file" >
+            </div>
+            <div class="form-group">
+                <label >Question</label>
+                <input type="text" class="form-control" placeholder="Enter your question">
+            </div>
+            <div class="form-group has-success">
+                <label >Réponse</label>
+                <input type="text" class="form-control is-valid">
+                <div class="valid-feedback">Bonne réponse.</div>
+            </div>
+            <div class="d-flex col-12">
+                <div class="form-group has-danger col-6 m-1">
+                    <label>Réponse</label>
+                    <input type="text" class="form-control is-invalid" >
+                    <div class="invalid-feedback">Mauvaise Réponse</div>
+                </div>
+                <div class="form-group has-danger col-6 m-1">
+                    <label >Réponse</label>
+                    <input type="text" class="form-control is-invalid" >
+                    <div class="invalid-feedback">Mauvaise Réponse</div>
+                </div>
+            </div>
+            <br>
+            <button type="submit" class="btn btn-warning">Submit</button>
+        </fieldset>
+    </form> #}
+</div>
+
+</div>
+
+{% endblock %}

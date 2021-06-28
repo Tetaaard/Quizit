@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Play !{% endblock %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/navbarre-style.css') }}">
+{% endblock %}
+
+{% block body %}
+<style>
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;800&display=swap");
+* {
+    font-family: "Nunito", sans-serif;
+    margin: 0;
+    padding: 0;
+        padding-top: 0px;
+        padding-bottom: 0px;
+    box-sizing: border-box;
+}
+</style>
+
+  {# <section>
+
+       <ul> #}
+<p>{{ categorie.name}} </p>  
+   <p>{{ question.content  }}</p>
+    {% for reponse in reponses %}        
+          <li>
+            <p>{{reponse.content }} </p>  
+        </li>
+      {% endfor %}
+</section> #}
+{% endblock %}

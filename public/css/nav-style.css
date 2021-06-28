@@ -1,0 +1,108 @@
+* {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+  }
+  body {
+    background: #f6f5f7;
+    font-family: "Nunito", sans-serif;
+    min-height: 100vh;
+ 
+  }
+    
+  .nav {
+      top:0;
+    height: 70px;
+    width: 100%;
+    background-color: #f6f5f7;
+    position: relative;
+  }
+  
+  .nav > .nav-header {
+    display: inline;
+  }
+  
+  .nav > .nav-header > .nav-title {
+    display: inline-block;
+    font-size: 22px;
+    color: #767878;
+    padding: 10px 10px 10px 10px;
+  }
+  
+  .nav > .nav-btn {
+    display: none;
+  }
+  
+  .nav > .nav-links {
+    display: inline;
+    float: right;
+    font-size: 18px;
+  }
+  
+  .nav > .nav-links > a {
+    display: inline-block;
+    padding: 13px 10px 13px 10px;
+    text-decoration: none;
+    color: #adb0b0;
+    font-size:14px;
+    cursor:pointer;
+  }
+  
+  .nav > .nav-links > a:hover {
+    cursor:pointer;
+    color: rgba(77, 75, 75, 0.829);
+  }
+  
+  .nav > #nav-check {
+    display: none;
+  }
+  
+  @media (max-width:800px) {
+    .nav > .nav-btn {
+      cursor:pointer;
+      display: inline-block;
+      position: absolute;
+      right: 20px;
+      top: 3px;
+    }
+    .nav > .nav-btn > label {
+      cursor:pointer;
+      display: inline-block;
+      width: 50px;
+      height: 40px;
+      padding: 14px;
+      padding-bottom: 4px;
+      border: 1px solid #d0d1d1;
+      border-radius: 3px;
+    }
+    
+    .nav > .nav-btn > label > span {
+      display: block;
+      width: 21px;
+      height: 7px;
+      border-top: 2px solid #767878;
+    }
+    .nav > .nav-links {
+      position: absolute;
+      display: block;
+      width: 100%;
+      background-color: #fffefd;
+      height: 0px;
+      transition: all 0.3s ease-in;
+      overflow-y: hidden;
+      top:70px;
+      left: 0px;
+    }
+    .nav > .nav-links > a {
+      display: block;
+      width: 100%;
+    }
+    .nav > #nav-check:not(:checked) ~ .nav-links {
+      height: 0px;
+    }
+    .nav > #nav-check:checked ~ .nav-links {
+      height: calc(26vh - 50px);
+      overflow-y: auto;
+      z-index: 200;
+    }
+  }

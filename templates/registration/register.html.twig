@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="css/style.css">
+{% endblock %}
+
+{% block title %}Sign In{% endblock %}
+
+{% block body %}
+<div class="body">
+    <div class="container">
+        <div class="form-container sign-in-container">
+            <div class="form">
+            {{ form_start(registrationForm) }}
+
+            {% for flashError in app.flashes('verify_email_error') %}
+                <div class="alert alert-danger" role="alert">{{ flashError }}</div>
+            {% endfor %}
+            <h1>Sign In</h1>
+            <span>or use your account</span>
+            
+            {{ form_row(registrationForm.email) }}
+            {{ form_row(registrationForm.plainPassword, {
+                label: 'Password'
+            }) }}
+            {{ form_row(registrationForm.agreeTerms) }}
+            <br>
+            <br>
+
+            <button type="submit" class="btn">Sign In</button>
+            {{ form_end(registrationForm) }}
+            </div>
+        </div>
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-right">
+                    <h1>Hello, Friend!</h1>
+                    <p>Enter your personal details and start your journey with us</p>
+                    <form action={{ path('app_login')}}>
+                    <button class="ghost">Sign Up</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

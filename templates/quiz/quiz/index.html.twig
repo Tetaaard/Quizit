@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Choose Quiz !{% endblock %}
+{% block stylesheets %}
+   
+    <link rel="stylesheet" href="css/quiz-style.css">
+{% endblock %}
+
+
+{% block body %}
+<div class="body">
+	<div class="gallery">
+		<header>
+			<h1>Quiz</h1>
+			<p>Choose quiz has you want for more fun  </p>
+		</header>
+
+		<div class="-fx-image-gal">
+			{% for categorie in categories %}
+				<div class="-fx-gal-item">
+					<div class="-fx-gal-image-thumb" tabindex="1">  
+						<a href="{{ path('app_show', {'id':categorie.id}) }}">
+						<img class="img"src="{{ categorie.image }}" />
+						</a>
+					</div>
+					<p class="text">{{ categorie.name }} <p>
+				</div><!-- /-fx-gal-item -->
+			{% endfor %}
+			{% for categorie in categories %}
+				<div class="-fx-gal-item">
+					<div class="-fx-gal-image-thumb" tabindex="1">
+						<a href="{{ path('app_show', {'id':categorie.id}) }}" >
+							<img class="img" src="{{ categorie.image }}" />
+						</a>
+					</div>
+						<p class="text">{{ categorie.name }} <p>
+				</div><!-- /-fx-gal-item -->
+			{% endfor %}	
+			{% for categorie in categories %}
+				<div class="-fx-gal-item">
+					<div class="-fx-gal-image-thumb" tabindex="1">
+						<a href="{{ path('app_show', {'id':categorie.id}) }}" target="_blank">
+							<img class="img" src="{{ categorie.image }}" />
+						</a>
+					</div>
+					<p class="text">{{ categorie.name }} <p>
+				</div><!-- /-fx-gal-item -->
+			{% endfor %}	
+		</div>
+		<div class="pagination">{{ knp_pagination_render(categories) }}</div>
+
+	</div>
+</div>
+{% endblock %}

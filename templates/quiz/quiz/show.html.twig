@@ -1,0 +1,121 @@
+{% extends 'base.html.twig' %}
+{% block title %}{{ categorie.name }} {% endblock %}
+{% block stylesheets %}
+   <link rel="stylesheet" href="css/play-style.css">
+{% endblock %}
+
+{% block body %}
+
+  <div class="form-container">
+      <h3>{{ categorie.name }}</h3>
+
+  <div class="circle-orange-small"></div>
+  <div class="circle-blue"></div>
+  <div class="circle-orange-big"></div>
+  <div class="circle-center"></div>
+  <div class="circle-center-text"></div>
+  <div class="circle-green"></div>
+  <div class="circle-blue-small"></div>
+    <form action="" method="post">
+          <input id='step2' type='checkbox'>
+          <input id='step3' type='checkbox'>
+          <input id='step4' type='checkbox'>
+          <input id='step5' type='checkbox'>
+          <input id='step6' type='checkbox'>
+          <input id='step7' type='checkbox'>
+          <input id='step8' type='checkbox'>
+          <input id='step9' type='checkbox'>
+          <input id='step10' type='checkbox'>
+          <input id='step11' type='checkbox'>
+
+  {% set i = 0 %}
+      {% for question in questions %} 
+          {% set i = i + 1 %}
+          <div id="part{{ i }}" class="form-group">
+    
+              <div class="panel panel-primary">
+                  <div class="panel-heading">
+                      <h4 class="panel-title">Question {{ i }}/10</h4>
+                  </div> 
+                  <label for="custom_fields_487282">{{ question.content  }}</label>
+                  <select name="resultat{{question.id}}_question{{i}}" id="custom_fields_487282" class="form-control required" placeholder="Selecionez une réponse" >
+                      {% for reponse in question.reponses %}
+                      <option value="{{ reponse.reponseExpected }}" >{{ reponse.content }}</option>
+                      {% endfor %}
+                  </select>      
+                  <div class="btn-group btn-group-lg" role="group" aria-label="...">
+                    
+                      {% if i != 1 %}
+                          {% set iBack = i  %}
+                          <label for='step{{ iBack  }}' id="back-step{{ iBack  }}" class="back">
+                              <div class="btn btn-default btn-primary btn-lg" role="button">Back</div>
+                          </label>
+                      
+                      {% endif %}
+                
+                          {% set iNext = i + 1 %}
+                      {% if iNext < 11 %}
+                      <label for='step{{ iNext }}' id="continue-step{{ iNext }}" class="continue">
+                          <div class="btn btn-default btn-success btn-lg">Continuer</div>
+                      </label>
+                      {% endif %}
+                      {% if iNext >= 11 %}
+                          <label for='step{{ iNext }}' id="continue-step{{ iNext }}" class="continue">
+                          <button class="btn btn-default btn-success btn-lg">Valider</button>
+                      </label>
+                      
+                      {% endif %}
+                  </div>
+              </div>
+          </div>
+      {% endfor %}
+    
+      <!-- Fin -->
+  <div id="part11" class="form-group">
+    <div class="container">
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+  </div>
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h3 class="panel-title">Question 10/10</h3>
+      </div>
+      <h3>Bravo quiz términé !</h3>
+      <br>
+      <div class="btn-group btn-group-lg" role="group" aria-label="...">
+
+        <label class="back">
+          <div class="btn btn-default btn-primary btn-lg"><a style="color:white" href="/quiz">Jouer à autre quiz</a></div>
+        </label>
+      </div>
+    </div>
+  </div>
+
+    </form> 
+    
+  </div>
+ {# <section>
+<h1>{{ categorie.name }} </h1>  
+       <ul>
+
+    {% for question in questions %}        
+          <li>
+           <p>{{ question.content  }}</p>
+           {% for reponse in question.reponses %}
+      <p>{{ reponse.content }} </p>  
+           {% endfor %}
+           
+        </li>
+      {% endfor %}
+      </ul>
+</section> #}
+
+{% endblock %}
